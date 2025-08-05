@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+public class MethodsProject {
+
+    // 1. Quiz Game Method
+    public static void quizGame() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("What is 2 + 2?");
+        int answer = sc.nextInt();
+        if (answer == 4) {
+            System.out.println("Correct!");
+        } else {
+            System.out.println("Wrong. The answer is 4.");
+        }
+    }
+
+    // 2. Calculator Method
+    public static void calculator() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        double num1 = sc.nextDouble();
+
+        System.out.print("Enter operator (+ - * /): ");
+        char op = sc.next().charAt(0);
+
+        System.out.print("Enter second number: ");
+        double num2 = sc.nextDouble();
+
+        double result;
+        if (op == '+') result = num1 + num2;
+        else if (op == '-') result = num1 - num2;
+        else if (op == '*') result = num1 * num2;
+        else if (op == '/') result = num1 / num2;
+        else {
+            System.out.println("Invalid operator");
+            return;
+        }
+
+        System.out.println("Result: " + result);
+    }
+
+    // 3. Number Analyzer Method
+    public static void numberAnalyzer() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        System.out.println("Analyzing numbers from 1 to " + num + "...");
+        for (int i = 1; i <= num; i++) {
+            if (i % 2 == 0 && i % 3 == 0) {
+                System.out.println(i + " is divisible by both 2 and 3");
+            } else if (i % 2 == 0) {
+                System.out.println(i + " is divisible by 2");
+            } else if (i % 3 == 0) {
+                System.out.println(i + " is divisible by 3");
+            } else {
+                System.out.println(i + " is not divisible by 2 or 3");
+            }
+        }
+    }
+
+    // MAIN METHOD
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Example: run each function
+        quizGame();
+        calculator();
+        numberAnalyzer();
+    }
+}
